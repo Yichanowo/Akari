@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkariBot帮助手册</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background: #f5f7fa;
+            line-height: 1.5;
+        }
+        h1 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 1rem;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .cmd-group {
+            background: white;
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .cmd {
+            border-left: 3px solid #e67e22;
+            padding: 0.5rem 0 0.5rem 1rem;
+            margin: 0.8rem 0;
+        }
+        .cmd-name {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #d35400;
+            background: #fef5e8;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .cmd-desc {
+            color: #2c3e50;
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+        }
+        .param {
+            background: #ecf0f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+        .note {
+            background: #e8f4fd;
+            border-left: 3px solid #3498db;
+            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>AkariBot是HarukiBot和烤森bot的分布式，此外也有自己的一些功能。</h1>
+    <p>以下为所有可用指令，点击类别快速跳转：<a href="#calc">ProjectSekai计算</a> | <a href="#schedule">QQ群冲榜排表提醒</a></p>
+
+    <!-- ==================== 计算类 ==================== -->
+    <h2 id="calc">ProjectSekai计算</h2>
+    <div class="note">火倍率规则与游戏一致，方括号中的变量可选填。当不填时默认5火25倍</div>
+
+    <div class="cmd"><span class="cmd-name">/leader</span> <span class="param">当前队长次数 每日次数 目标章数</span><div class="cmd-desc">计算升到目标等级所需天数（上限50000）</div></div>
+    <div class="cmd"><span class="cmd-name">/exleader</span> <span class="param">当前队长次数 每日次数 目标章数</span><div class="cmd-desc">计算升到目标等级所需天数（EX等级上限28500）</div></div>
+    <div class="cmd"><span class="cmd-name">/gain</span> <span class="param">当前队长次数 每日次数 游玩天数</span><div class="cmd-desc">计算游玩后能达到的等级</div></div>
+    <div class="cmd"><span class="cmd-name">/exgain</span> <span class="param">当前队长次数 每日次数 游玩天数</span><div class="cmd-desc">计算游玩后能达到的等级（EX等级）</div></div>
+    <div class="cmd"><span class="cmd-name">/kizuna</span> <span class="param">当前等级 距离下一级经验 一天总把数 目标等级 [火数量] [用火把数]</span><div class="cmd-desc">计算升到目标等级所需天数（羁绊1~125级）</div></div>
+    <div class="cmd"><span class="cmd-name">/kizunadays</span> <span class="param">当前等级 距离下一级经验 一天总把数 游玩天数 [火数量] [用火把数]</span><div class="cmd-desc">计算游玩指定天数后能达到的羁绊等级（羁绊满级时提示实际用时）</div></div>
+
+    <!-- ==================== 排表类 ==================== -->
+    <h2 id="schedule">QQ群冲榜排表提醒</h2>
+    <div class="note">⚠️以下指令需要对应权限，需要让伊酱给予管理员权限<br>该功能还处于测试阶段，如遇到bug请反馈！</div>
+
+    <h3>超级管理员专属</h3>
+    <table>
+        <thead><tr><th>指令</th><th>说明</th></tr></thead>
+        <tbody>
+            <tr><td><code>/启用排表功能</code></td><td>启用当前群的排表提醒功能</td></tr>
+            <tr><td><code>/关闭排表功能</code></td><td>关闭当前群的排表提醒功能，并清除本群所有任务</td></tr>
+            <tr><td><code>/addadmin &lt;QQ号&gt;</code></td><td>添加普通管理员</td></tr>
+            <tr><td><code>/deladmin &lt;QQ号&gt;</code></td><td>移除普通管理员</td></tr>
+            <tr><td><code>/listall</code></td><td>查看所有群的任务统计</td></tr>
+            <tr><td><code>/listadmin</code></td><td>查看当前的管理员列表</td></tr>
+        </tbody>
+    </table>
+
+    <h3>普通管理员</h3>
+    <table>
+        <thead><tr><th>指令</th><th>说明</th></tr></thead>
+        <tbody>
+            <tr><td><code>/ 创建排表</code></td><td>进入上传等待状态（5分钟内有效），随后上传 .xlsx 文件覆盖本群排班，表格格式请发送此指令查看。</td></tr>
+            <tr><td><code>/ 添加排表 月 日 时 QQ号1 QQ号2 QQ号3 QQ号4</code></td><td>手动添加/覆盖单条提醒（可用“无”占位）</td></tr>
+            <tr><td><code>/ 移除排表 月 日 时</code></td><td>删除指定时间的提醒</td></tr>
+            <tr><td><code>/ 取消下一次提醒</code></td><td>删除本群最近一次即将触发的提醒</td></tr>
+            <tr><td><code>/ 更新房号 &lt;五位数字&gt;</code></td><td>设置提醒消息中附带的房号</td></tr>
+            <tr><td><code>/list</code></td><td>查看本群所有排班任务</td></tr>
+
+        </tbody>
+    </table>
+
+    <footer>机器人版本 v2.0 BY 伊ちゃん | ProjectSekai数据来源：bilibili@xfl03</footer>
+</body>
+</html>
