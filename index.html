@@ -5,146 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>AkariBot帮助手册</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        background: #faf5f7;  /* 极浅粉紫背景 */
+        padding: 20px 16px 40px;
+        color: #3d2c3a;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    /* 头部 */
+    .header {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #884499, #DDAACC);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 8px;
+    }
+    .header p {
+        color: #8a6b7e;
+        font-size: 0.9rem;
+    }
+    /* 区块卡片 */
+    .section {
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 4px 12px rgba(136, 68, 153, 0.08);
+        margin-bottom: 28px;
+        overflow: hidden;
+        border: 1px solid #f0e4ea;
+    }
+    .section-title {
+        background: #fdf8fb;
+        padding: 16px 20px;
+        border-bottom: 1px solid #f0e4ea;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #884499;
+    }
+    .section-title span:first-child {
+        font-size: 1.5rem;
+    }
+    .subsection {
+        border-top: 1px solid #f0e4ea;
+    }
+    .subsection-header {
+        background: #fefafc;
+        padding: 12px 20px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #884499;
+        border-left: 4px solid #BB6688;
+        margin: 0;
+    }
+    /* 指令卡片列表 */
+    .cmd-list {
+        padding: 8px 0;
+    }
+    .cmd-card {
+        padding: 14px 20px;
+        border-bottom: 1px solid #f5eaf0;
+        transition: background 0.2s;
+    }
+    .cmd-card:last-child {
+        border-bottom: none;
+    }
+    .cmd-card:hover {
+        background: #fef6fb;
+    }
+    /* 指令名 */
+    .cmd-name {
+        font-family: 'SF Mono', 'Fira Code', monospace;
+        font-weight: 600;
+        font-size: 0.95rem;
+        background: #f3e6ef;
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        color: #BB6688;
+        margin-bottom: 8px;
+    }
+    /* 参数说明文字 */
+    .cmd-desc {
+        font-size: 0.9rem;
+        color: #5a4b55;
+        line-height: 1.4;
+        margin-top: 6px;
+    }
+    .param {
+        font-family: monospace;
+        background: #fef0f5;
+        padding: 2px 6px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        color: #DDAACC;
+        display: inline-block;
+        margin-top: 6px;
+    }
+    /* 提示框 */
+    .note {
+        background: #fdf4f9;
+        margin: 16px 20px;
+        padding: 12px 16px;
+        border-radius: 16px;
+        font-size: 0.85rem;
+        color: #884499;
+        border-left: 3px solid #DDAACC;
+    }
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.75rem;
+        color: #b39fb0;
+        border-top: 1px solid #f0e4ea;
+        padding-top: 1rem;
+    }
+    hr {
+        margin: 8px 20px;
+        border: none;
+        border-top: 1px solid #f0e4ea;
+    }
+    @media (max-width: 600px) {
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f0f2f5;
-            padding: 20px 16px 40px;
-            color: #1f2d3d;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        /* 头部 */
-        .header {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-        .header h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 8px;
-        }
-        .header p {
-            color: #5a6874;
-            font-size: 0.9rem;
-        }
-        /* 区块 */
-        .section {
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 28px;
-            overflow: hidden;
-        }
-        .section-title {
-            background: #f8f9fc;
-            padding: 16px 20px;
-            border-bottom: 1px solid #eef2f6;
-            font-size: 1.3rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title span:first-child {
-            font-size: 1.5rem;
-        }
-        .subsection {
-            border-top: 1px solid #eef2f6;
-        }
-        .subsection-header {
-            background: #fafbfd;
-            padding: 12px 20px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: #2c3e50;
-            border-left: 4px solid #3498db;
-            margin: 0;
-        }
-        /* 指令卡片 */
-        .cmd-list {
-            padding: 8px 0;
+            padding: 12px;
         }
         .cmd-card {
-            padding: 14px 20px;
-            border-bottom: 1px solid #f0f2f5;
-            transition: background 0.2s;
-        }
-        .cmd-card:last-child {
-            border-bottom: none;
-        }
-        .cmd-card:hover {
-            background: #f8fafd;
+            padding: 12px 16px;
         }
         .cmd-name {
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-weight: 600;
-            font-size: 0.95rem;
-            background: #eef2f6;
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            color: #c0392b;
-            margin-bottom: 8px;
-        }
-        .cmd-desc {
-            font-size: 0.9rem;
-            color: #2c3e50;
-            line-height: 1.4;
-            margin-top: 6px;
-        }
-        .param {
-            font-family: monospace;
-            background: #fef5e8;
-            padding: 2px 6px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            color: #e67e22;
-            display: inline-block;
-            margin-top: 6px;
-        }
-        .note {
-            background: #eef6fc;
-            margin: 16px 20px;
-            padding: 12px 16px;
-            border-radius: 16px;
             font-size: 0.85rem;
-            color: #2c6e9e;
-            border-left: 3px solid #3498db;
         }
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.75rem;
-            color: #8a99a8;
-        }
-        hr {
-            margin: 8px 20px;
-            border: none;
-            border-top: 1px solid #eef2f6;
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
-            }
-            .cmd-card {
-                padding: 12px 16px;
-            }
-            .cmd-name {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 <div class="container">
@@ -177,9 +184,17 @@
             <span>QQ群冲榜排表提醒</span>
         </div>
         <div class="note">
-⚠️以下指令需要对应权限，需要让伊酱给予管理员权限<br>该功能还处于测试阶段，如遇到bug请反馈！
+⚠️以下指令需要对应权限，需要让伊酱给予管理员权限<br>该功能还处于测试阶段，特别是cn功能！如遇到bug请反馈！
         </div>
-
+        <!-- 所有人可用 -->
+        <div class="subsection">
+            <div class="subsection-header">所有人可用</div>
+            <div class="cmd-list">
+                <div class="cmd-card"><div class="cmd-name">/房号</div><div class="param">查看当前群设置的房号</div></div>
+                <div class="cmd-card"><div class="cmd-name">/查表 月 日 时</div><div class="param">查看指定时间的排班人员（示例：/查表 4 20 14 表示4月20日14时）</div></div>
+                <div class="cmd-card"><div class="cmd-name">/ cn对应 &lt;CN&gt;</div><div class="param">添加你的cn至数据库中</div></div>
+            </div>
+        </div>
         <!-- 超级管理员 -->
         <div class="subsection">
             <div class="subsection-header">超级管理员</div>
@@ -203,11 +218,13 @@
                 <div class="cmd-card"><div class="cmd-name">/ 取消下一次提醒</div><div class="param">删除本群最近一次即将触发的提醒</div></div>
                 <div class="cmd-card"><div class="cmd-name">/ 更新房号 &lt;五位数字&gt;</div><div class="param">设置提醒消息中附带的房号</div></div>
                 <div class="cmd-card"><div class="cmd-name">/list</div><div class="param">查看本群所有排班任务</div></div>
+                <div class="cmd-card"><div class="cmd-name">/ 上传cn对应</div><div class="param">进入上传等待状态（5分钟内有效），随后上传 .xlsx文件覆盖所有cn列表，表格格式请发送此指令查看。</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn列表</div><div class="param">查看当前所有QQ与CN的映射关系</div></div>
             </div>
         </div>
     </div>
 
-    <footer>制作：伊ちゃん | ProjectSekai数据来源：bilibili@xfl03 | 版本 v2.2</footer>
+    <footer>制作：伊ちゃん | ProjectSekai数据来源：bilibili@xfl03 | 版本 v3.0</footer>
 </div>
 </body>
 </html>
