@@ -184,15 +184,30 @@
             <span>QQ群冲榜排表提醒</span>
         </div>
         <div class="note">
-⚠️以下指令需要对应权限，需要让伊酱给予管理员权限<br>该功能还处于测试阶段，特别是cn功能！如遇到bug请反馈！
+⚠️以下指令需要对应权限，需要让伊酱给予管理员权限<br>该功能还处于测试阶段，如遇到bug请反馈！
         </div>
         <!-- 所有人可用 -->
         <div class="subsection">
             <div class="subsection-header">所有人可用</div>
             <div class="cmd-list">
-                <div class="cmd-card"><div class="cmd-name">/房号</div><div class="param">查看当前群设置的房号</div></div>
+                <div class="cmd-card"><div class="cmd-name"><单独的五位数字房号消息>（如：直接发送12345）</></div><div class="param">设置当前群的房号并自动修改群名（加在原群名前，更新时会自动覆盖，需要将bot设为管理员或更改群名设置为所有人可设置）</div></div>
                 <div class="cmd-card"><div class="cmd-name">/查表 月 日 时</div><div class="param">查看指定时间的排班人员（示例：/查表 4 20 14 表示4月20日14时）</div></div>
                 <div class="cmd-card"><div class="cmd-name">/ cn对应 &lt;CN&gt;</div><div class="param">添加你的cn至数据库中</div></div>
+            </div>
+        </div>
+        <!-- 普通管理员 -->
+        <div class="subsection">
+            <div class="subsection-header">普通管理员</div>
+            <div class="cmd-list">
+                <div class="cmd-card"><div class="cmd-name">/ 创建排表</div><div class="param">进入上传等待状态（5分钟内有效），随后上传 .xlsx 文件覆盖本群排班，表格格式请发送此指令查看。</div></div>
+                <div class="cmd-card"><div class="cmd-name">/ 添加排表 月 日 时 QQ号1 QQ号2 QQ号3 QQ号4</div><div class="param">手动添加/覆盖单条提醒（QQ号4为返场，人数不够可填无）</div></div>
+                <div class="cmd-card"><div class="cmd-name">/ 移除排表 月 日 时</div><div class="param">删除指定时间的提醒</div></div>
+                <div class="cmd-card"><div class="cmd-name">/ 取消下一次提醒</div><div class="param">删除本群最近一次即将触发的提醒</div></div>
+                <div class="cmd-card"><div class="cmd-name">/list</div><div class="param">查看本群所有排班任务</div></div>
+                <div class="cmd-card"><div class="cmd-name">/ 上传cn对应</div><div class="param">进入上传等待状态（5分钟内有效），随后上传 .xlsx文件覆盖所有cn列表，表格格式请发送此指令查看。</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn列表</div><div class="param">查看当前所有QQ与CN的映射关系</div></div>
+                <div class="cmd-card"><div class="cmd-name">/bcon</div><div class="param">开启本群的房号广播，每五分钟自动发送房号</div></div>
+                <div class="cmd-card"><div class="cmd-name">/bcoff</div><div class="param">关闭本群的房号广播</div></div>
             </div>
         </div>
         <!-- 超级管理员 -->
@@ -207,24 +222,9 @@
                 <div class="cmd-card"><div class="cmd-name">/listadmin</div><div class="param">查看当前的管理员列表</div></div>
             </div>
         </div>
-
-        <!-- 普通管理员 -->
-        <div class="subsection">
-            <div class="subsection-header">普通管理员</div>
-            <div class="cmd-list">
-                <div class="cmd-card"><div class="cmd-name">/ 创建排表</div><div class="param">进入上传等待状态（5分钟内有效），随后上传 .xlsx 文件覆盖本群排班，表格格式请发送此指令查看。</div></div>
-                <div class="cmd-card"><div class="cmd-name">/ 添加排表 月 日 时 QQ号1 QQ号2 QQ号3 QQ号4</div><div class="param">手动添加/覆盖单条提醒（QQ号4为返场，人数不够可填无）</div></div>
-                <div class="cmd-card"><div class="cmd-name">/ 移除排表 月 日 时</div><div class="param">删除指定时间的提醒</div></div>
-                <div class="cmd-card"><div class="cmd-name">/ 取消下一次提醒</div><div class="param">删除本群最近一次即将触发的提醒</div></div>
-                <div class="cmd-card"><div class="cmd-name">/ 更新房号 &lt;五位数字&gt;</div><div class="param">设置提醒消息中附带的房号</div></div>
-                <div class="cmd-card"><div class="cmd-name">/list</div><div class="param">查看本群所有排班任务</div></div>
-                <div class="cmd-card"><div class="cmd-name">/ 上传cn对应</div><div class="param">进入上传等待状态（5分钟内有效），随后上传 .xlsx文件覆盖所有cn列表，表格格式请发送此指令查看。</div></div>
-                <div class="cmd-card"><div class="cmd-name">/cn列表</div><div class="param">查看当前所有QQ与CN的映射关系</div></div>
-            </div>
-        </div>
     </div>
 
-    <footer>制作：伊ちゃん | ProjectSekai数据来源：bilibili@xfl03 | 版本 v3.0</footer>
+    <footer>制作：伊ちゃん | ProjectSekai数据来源：bilibili@xfl03 | 版本 不清楚</footer>
 </div>
 </body>
 </html>
