@@ -185,10 +185,12 @@
             <div class="subsection-header">所有人可用</div>
             <div class="cmd-list">
                 <div class="cmd-card"><div class="cmd-name">单独发送五位数字房号</div><div class="cmd-desc">设置当前群的房号并自动修改群名（需要bot为管理员）</div><div class="param">示例：12345</div></div>
+                <div class="cmd-card"><div class="cmd-name">/清空房号</div><div class="cmd-desc">清空当前群的房号并修改群名（需要bot为管理员）</div></div>
                 <div class="cmd-card"><div class="cmd-name">/查表</div><div class="cmd-desc">显示发送者在当前群聊的未来排表日程</div></div>
                 <div class="cmd-card"><div class="cmd-name">/查表 月 日 时</div><div class="cmd-desc">查看指定时间的排班人员</div><div class="param">示例：/查表 4 20 14</div></div>
                 <div class="cmd-card"><div class="cmd-name">/cn对应 CN</div><div class="cmd-desc">添加/覆盖你自己的CN至数据库</div><div class="param">示例：/cn对应 伊酱</div></div>
                 <div class="cmd-card"><div class="cmd-name">/cn代对应 CN QQ号</div><div class="cmd-desc">为指定QQ号的用户添加/覆盖CN至数据库</div><div class="param">示例：/cn代对应 伊酱 123456</div></div>
+                <div class="cmd-card"><div class="cmd-name">/替换班表 月 日 时 CN1 CN2</div><div class="cmd-desc">替换目标时间CN1和CN2的班表，可有一人不在班表内（简称代替上班）</div><div class="param">示例：/替换班表 5 20 18 伊酱 Akari</div></div>
             </div>
         </div>
 
@@ -202,7 +204,9 @@
                 <div class="cmd-card"><div class="cmd-name">/取消下一次提醒</div><div class="cmd-desc">删除本群最近一次即将触发的提醒</div></div>
                 <div class="cmd-card"><div class="cmd-name">/list</div><div class="cmd-desc">查看本群所有排班任务</div></div>
                 <div class="cmd-card"><div class="cmd-name">/查表 CN</div><div class="cmd-desc">显示对应CN在当前群聊的未来排表日程</div><div class="param">示例：/查表 伊酱</div></div>
-                <div class="cmd-card"><div class="cmd-name">/cn列表</div><div class="cmd-desc">查看当前所有QQ与CN的映射关系，会导出为Excel文件</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn列表本群</div><div class="cmd-desc">查看本群所有人与CN表的映射关系</div></div>
+                <div class="cmd-card"><div class="cmd-name">/auto</div><div class="cmd-desc">清空当前群的房号并修改群名为AUTO中（需要bot为管理员）</div></div>
+                <div class="cmd-card"><div class="cmd-name">/停车</div><div class="cmd-desc">清空当前群未来的所有排表并修改群名为辛苦了（需要bot为管理员）</div></div>
             </div>
         </div>
 
@@ -212,10 +216,13 @@
             <div class="cmd-list">
                 <div class="cmd-card"><div class="cmd-name">/启用排表功能</div><div class="cmd-desc">启用当前群的排表提醒功能</div></div>
                 <div class="cmd-card"><div class="cmd-name">/关闭排表功能</div><div class="cmd-desc">关闭当前群的排表提醒功能，并清除本群所有任务</div></div>
+                <div class="cmd-card"><div class="cmd-name">/silenton</div><div class="cmd-desc">停止本群修改群名的播报</div></div>
+                <div class="cmd-card"><div class="cmd-name">/silentoff</div><div class="cmd-desc">开启本群修改群名的播报</div></div>
                 <div class="cmd-card"><div class="cmd-name">/addadmin &lt;QQ号/CN&gt;</div><div class="cmd-desc">添加管理员</div></div>
                 <div class="cmd-card"><div class="cmd-name">/deladmin &lt;QQ号/CN&gt;</div><div class="cmd-desc">移除管理员</div></div>
                 <div class="cmd-card"><div class="cmd-name">/listall</div><div class="cmd-desc">查看所有群的任务统计</div></div>
                 <div class="cmd-card"><div class="cmd-name">/listadmin</div><div class="cmd-desc">查看当前的管理员列表</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn列表</div><div class="cmd-desc">查看当前所有QQ与CN的映射关系，会导出为Excel文件</div></div>
             </div>
         </div>
     </div>
