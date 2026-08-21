@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AkariBot帮助手册</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        background: #faf5f7;
+        padding: 20px 16px 40px;
+        color: #3d2c3a;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #884499, #DDAACC);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 8px;
+    }
+    .header p {
+        color: #8a6b7e;
+        font-size: 0.9rem;
+    }
+    .section {
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 4px 12px rgba(136, 68, 153, 0.08);
+        margin-bottom: 28px;
+        overflow: hidden;
+        border: 1px solid #f0e4ea;
+    }
+    .section-title {
+        background: #fdf8fb;
+        padding: 16px 20px;
+        border-bottom: 1px solid #f0e4ea;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #884499;
+    }
+    .subsection {
+        border-top: 1px solid #f0e4ea;
+    }
+    .subsection-header {
+        background: #fefafc;
+        padding: 12px 20px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #884499;
+        border-left: 4px solid #BB6688;
+        margin: 0;
+    }
+    .cmd-list {
+        padding: 8px 0;
+    }
+    .cmd-card {
+        padding: 14px 20px;
+        border-bottom: 1px solid #f5eaf0;
+        transition: background 0.2s;
+    }
+    .cmd-card:last-child {
+        border-bottom: none;
+    }
+    .cmd-card:hover {
+        background: #fef6fb;
+    }
+    .cmd-name {
+        font-family: 'SF Mono', 'Fira Code', monospace;
+        font-weight: 600;
+        font-size: 0.95rem;
+        background: #f3e6ef;
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        color: #BB6688;
+        margin-bottom: 8px;
+    }
+    .cmd-desc {
+        font-size: 0.9rem;
+        color: #5a4b55;
+        line-height: 1.4;
+        margin-top: 6px;
+    }
+    .param {
+        font-family: monospace;
+        background: #fef0f5;
+        padding: 2px 6px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        color: #DDAACC;
+        display: inline-block;
+        margin-top: 6px;
+    }
+    .note {
+        background: #fdf4f9;
+        margin: 16px 20px;
+        padding: 12px 16px;
+        border-radius: 16px;
+        font-size: 0.85rem;
+        color: #884499;
+        border-left: 3px solid #DDAACC;
+    }
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.75rem;
+        color: #b39fb0;
+        border-top: 1px solid #f0e4ea;
+        padding-top: 1rem;
+    }
+    hr {
+        margin: 8px 20px;
+        border: none;
+        border-top: 1px solid #f0e4ea;
+    }
+    @media (max-width: 600px) {
+        body {
+            padding: 12px;
+        }
+        .cmd-card {
+            padding: 12px 16px;
+        }
+        .cmd-name {
+            font-size: 0.85rem;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>AkariBot帮助手册</h1>
+        <p>bug反馈，想拉群请联系QQ：1362746161</p>
+    </div>
+
+    <!-- ProjectSekai计算 -->
+    <div class="section">
+        <div class="section-title">
+            ProjectSekai计算<p><a href="calculator.html" style="color: #b377c2; font-size: 0.85rem; text-decoration: none;">点击打开网页版计算器</a></p>
+        </div>
+        <div class="note">
+            羁绊指令默认每一把都能拿到S评级，火倍率规则与游戏一致，方括号中的变量可选填<br>
+            即有五个参数时默认[每日次数]都使用[火数量]的火，有六个参数时只有[用火把数]的次数是使用[火数量]的火<br>
+            不填默认为0火
+        </div>
+        <div class="cmd-list">
+            <div class="cmd-card"><div class="cmd-name">/leader 当前队长次数 每日次数 目标章数</div><div class="cmd-desc">计算升到目标等级所需天数（上限50000）</div><div class="param">示例：/leader 39 60 3</div></div>
+            <div class="cmd-card"><div class="cmd-name">/exleader 当前EX队长次数 每日次数 目标章数</div><div class="cmd-desc">计算升到目标等级所需天数（EX等级，上限28500）</div><div class="param">示例：/exleader 39 60 3</div></div>
+            <div class="cmd-card"><div class="cmd-name">/exp 当前队长次数 每日次数 游玩天数</div><div class="cmd-desc">计算游玩指定天数后能达到的等级</div><div class="param">示例：/exp 39 60 31</div></div>
+            <div class="cmd-card"><div class="cmd-name">/exexp 当前EX队长次数 每日次数 游玩天数</div><div class="cmd-desc">计算游玩后能达到的等级（EX等级）</div><div class="param">示例：/exexp 39 60 31</div></div>
+            <div class="cmd-card"><div class="cmd-name">/kizuna 当前等级 距离下一级经验 每日次数 目标等级 [火数量] [用火把数]</div><div class="cmd-desc">计算指定羁绊等级升到目标等级所需天数</div><div class="param">示例：/kizuna 39 1000 60 40 5 12</div></div>
+            <div class="cmd-card"><div class="cmd-name">/kizunadays 当前等级 距离下一级经验 每日次数 游玩天数 [火数量] [用火把数]</div><div class="cmd-desc">计算游玩指定天数后能达到的羁绊等级</div><div class="param">示例：/kizunadays 39 1000 60 31 5 12</div></div>
+            <div class="cmd-card"><div class="cmd-name">/常用网站</div><div class="cmd-desc">告诉你一些有用的网站</div></div>
+        </div>
+    </div>
+
+    <!-- QQ群冲榜排表提醒 -->
+    <div class="section">
+        <div class="section-title">
+            QQ群冲榜排表提醒
+        </div>
+        <div class="note">
+            ⚠️ 部分指令需要对应权限，需要让伊酱给予管理员<br>
+            不定期添加新功能，有提议可以联系伊酱<br>
+            CN功能只要对应一次后续就无需再次对应，填表时需要填入和对应时的CN相同的CN！！<br>
+            已支持每天凌晨自动生成今日排班图并 @全体成员，修改排表后也会自动更新图片！！
+        </div>
+
+        <!-- 所有人可用 -->
+        <div class="subsection">
+            <div class="subsection-header">所有人可用</div>
+            <div class="cmd-list">
+                <div class="cmd-card"><div class="cmd-name">单独发送五位数字房号</div><div class="cmd-desc">设置当前群的房号并自动修改群名</br>⚠️ 需要bot为管理员</div><div class="param">示例：12345</div></div>
+                <div class="cmd-card"><div class="cmd-name">/清空房号</div><div class="cmd-desc">清空当前群的房号并修改群名</br>⚠️ 需要bot为管理员</div></div>
+                <div class="cmd-card"><div class="cmd-name">/查表</div><div class="cmd-desc">显示发送者在当前群聊的未来排表日程图</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn对应 CN</div><div class="cmd-desc">添加/覆盖你自己的CN至数据库</div><div class="param">示例：/cn对应 伊酱</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn代对应 CN QQ号</div><div class="cmd-desc">为指定QQ号的用户添加/覆盖CN至数据库</div><div class="param">示例：/cn代对应 伊酱 123456</div></div>
+                <div class="cmd-card"><div class="cmd-name">/替换班表 月 日 时 CN1 CN2</div><div class="cmd-desc">替换/交换目标时间两名人员的排班（可用 /dsb 或 /代上班 别名）</div><div class="param">示例：/替换班表 5 20 18 伊酱 Akari</div></div>
+                <div class="cmd-card"><div class="cmd-name">/list</div><div class="cmd-desc">查看本群未来所有排班图</div></div>
+                <div class="cmd-card"><div class="cmd-name">/添加排表</div><div class="cmd-desc">进入批量添加排表模式，根据提示发送多行时间段，可标注“返场”添加返场位置。管理员可使用完整参数直接覆盖添加。</div><div class="param">添加示例：/添加排表 <br> [等待bot消息] <br>7 1 10 17<br>7 2 10 返场</div></div>
+            </div>
+        </div>
+
+        <!-- 普通管理员 -->
+        <div class="subsection">
+            <div class="subsection-header">普通管理员</div>
+            <div class="cmd-list">
+                <div class="cmd-card"><div class="cmd-name">/查表 CN</div><div class="cmd-desc">查看对应CN在本群的未来排表（需要管理员权限）</div><div class="param">示例：/查表 伊酱</div></div>
+                <div class="cmd-card"><div class="cmd-name">/创建排表</div><div class="cmd-desc">进入上传等待状态（5分钟内有效），随后上传.xlsx文件覆盖指定群排班（表格格式请发送此指令查看）</div></div>
+                <div class="cmd-card"><div class="cmd-name">/导出排表</div><div class="cmd-desc">导出本群28天内的所有排表excel文件</div></div>
+                <div class="cmd-card"><div class="cmd-name">/计算推时</div><div class="cmd-desc">统计本群28天内每个人的普推和返场时长，方便还推车</div></div>
+                <div class="cmd-card"><div class="cmd-name">/添加排表 月 日 时 CN1 CN2 CN3 CN4</div><div class="cmd-desc">管理员手动添加/覆盖单条排班（第4个CN为返场，可用“无”占位）</div><div class="param">示例：/添加排表 5 20 18 伊酱 无 无 Akari</div></div>
+                <div class="cmd-card"><div class="cmd-name">/移除排表 月 日 时</div><div class="cmd-desc">删除指定时间的排表和提醒</div><div class="param">示例：/移除排表 5 20 18</div></div>
+                <div class="cmd-card"><div class="cmd-name">/代添加排表 月 日 时 [结束时间] CN [返场]</div><div class="cmd-desc">管理员手动添加特定人员的排表，返场选填</div><div class="param">示例：/代添加排表 5 20 18 20 伊酱 </br> /代添加排表 5 20 18 伊酱 返场</div></div>
+                <div class="cmd-card"><div class="cmd-name">/添加auto 月 日 时 [结束时间]</div><div class="cmd-desc">添加auto时间段，如果该时间段原本有其他排班则会艾特被替换排班的成员提醒</div><div class="param">示例：/添加auto 5 20 18 20</div></div>
+                <div class="cmd-card"><div class="cmd-name">/取消下一次提醒</div><div class="cmd-desc">删除本群最近一次即将触发的提醒</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn列表本群</div><div class="cmd-desc">查看本群所有人与CN表的映射关系</div></div>
+                <div class="cmd-card"><div class="cmd-name">/auto</div><div class="cmd-desc">清空当前群的房号并修改群名为AUTO中</br>⚠️ 需要bot为管理员</div></div>
+                <div class="cmd-card"><div class="cmd-name">/停车</div><div class="cmd-desc">清空当前群未来的所有排表，修改群名为辛苦了，并将房号设为停车状态，后续添加任务提示“等待新房号”</br>⚠️ 需要bot为管理员</div></div>
+                <div class="cmd-card"><div class="cmd-name">/silenton</div><div class="cmd-desc">开启本群播报静音模式（不再提示修改群名）</div></div>
+                <div class="cmd-card"><div class="cmd-name">/silentoff</div><div class="cmd-desc">关闭本群播报静音模式</div></div>
+            </div>
+        </div>
+
+        <!-- 超级管理员 -->
+        <div class="subsection">
+            <div class="subsection-header">超级管理员</div>
+            <div class="cmd-list">
+                <div class="cmd-card"><div class="cmd-name">/启用排表功能</div><div class="cmd-desc">启用当前群的排表提醒功能</div></div>
+                <div class="cmd-card"><div class="cmd-name">/关闭排表功能</div><div class="cmd-desc">关闭当前群的排表提醒功能，并清除本群所有任务</div></div>
+                <div class="cmd-card"><div class="cmd-name">/addadmin &lt;QQ号/CN&gt;</div><div class="cmd-desc">添加管理员</div></div>
+                <div class="cmd-card"><div class="cmd-name">/deladmin &lt;QQ号/CN&gt;</div><div class="cmd-desc">移除管理员</div></div>
+                <div class="cmd-card"><div class="cmd-name">/listall</div><div class="cmd-desc">查看所有群的任务统计</div></div>
+                <div class="cmd-card"><div class="cmd-name">/listadmin</div><div class="cmd-desc">查看当前的管理员列表</div></div>
+                <div class="cmd-card"><div class="cmd-name">/cn列表</div><div class="cmd-desc">查看当前所有QQ与CN的映射关系，会导出为Excel文件</div></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>制作：伊ちゃん | ProjectSekai数据来源：bilibili@xfl03 | 特别感谢（排名不分先后）：阿逸、memory请我吃的炸鸡</footer>
+</div>
+</body>
+</html>
