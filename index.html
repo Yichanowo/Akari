@@ -190,9 +190,10 @@
                 <div class="cmd-card"><div class="cmd-name">/查表</div><div class="cmd-desc">显示发送者在当前群聊的未来排表日程图</div></div>
                 <div class="cmd-card"><div class="cmd-name">/cn对应 CN</div><div class="cmd-desc">添加/覆盖你自己的CN至数据库</div><div class="param">示例：/cn对应 伊酱</div></div>
                 <div class="cmd-card"><div class="cmd-name">/cn代对应 CN QQ号</div><div class="cmd-desc">为指定QQ号的用户添加/覆盖CN至数据库</div><div class="param">示例：/cn代对应 伊酱 123456</div></div>
-                <div class="cmd-card"><div class="cmd-name">/替换班表 月 日 时 CN1 CN2</div><div class="cmd-desc">替换/交换目标时间两名人员的排班（可用 /dsb 或 /代上班 别名）</div><div class="param">示例：/替换班表 5 20 18 伊酱 Akari</div></div>
+                <div class="cmd-card"><div class="cmd-name">/替换班表 月 日 时 CN1 CN2</div><div class="cmd-desc">替换/交换目标时间两名人员的排班（可用 /dsb 或 /代上班 别名）若想删除自己的排班可以将自己和[空]替换</div><div class="param">示例：/替换班表 5 20 18 伊酱 Akari<br>/替换班表 5 20 18 伊酱 空</div></div>
                 <div class="cmd-card"><div class="cmd-name">/list</div><div class="cmd-desc">查看本群未来所有排班图</div></div>
                 <div class="cmd-card"><div class="cmd-name">/添加排表</div><div class="cmd-desc">进入批量添加排表模式，根据提示发送多行时间段，可标注“返场”添加返场位置。管理员可使用完整参数直接覆盖添加。</div><div class="param">添加示例：/添加排表 <br> [等待bot消息] <br>7 1 10 17<br>7 2 10 返场</div></div>
+                <div class="cmd-card"><div class="cmd-name">/班表格式 月 日 天</div><div class="cmd-desc">生成对应时间未来几天的空白班表格式（第一行第一列为本群）</div><div class="param">示例：/班表格式 11 24 7 或 /班表格式 11月24日7天</div></div>
             </div>
         </div>
 
@@ -204,10 +205,13 @@
                 <div class="cmd-card"><div class="cmd-name">/创建排表</div><div class="cmd-desc">进入上传等待状态（5分钟内有效），随后上传.xlsx文件覆盖指定群排班（表格格式请发送此指令查看）</div></div>
                 <div class="cmd-card"><div class="cmd-name">/导出排表</div><div class="cmd-desc">导出本群28天内的所有排表excel文件</div></div>
                 <div class="cmd-card"><div class="cmd-name">/计算推时</div><div class="cmd-desc">统计本群28天内每个人的普推和返场时长，方便还推车</div></div>
-                <div class="cmd-card"><div class="cmd-name">/添加排表 月 日 时 CN1 CN2 CN3 CN4</div><div class="cmd-desc">管理员手动添加/覆盖单条排班（第4个CN为返场，可用“无”占位）</div><div class="param">示例：/添加排表 5 20 18 伊酱 无 无 Akari </br> /添加排表 5 20 18 auto</div></div>
-                <div class="cmd-card"><div class="cmd-name">/移除排表 月 日 时</div><div class="cmd-desc">删除指定时间的排表和提醒</div><div class="param">示例：/移除排表 5 20 18</div></div>
+                <div class="cmd-card"><div class="cmd-name">/添加排表 月 日 时 CN1 CN2 CN3 CN4</div><div class="cmd-desc">管理员手动添加/覆盖单条排班（第4个CN为返场，可用“无”占位）</div><div class="param">示例：/添加排表 5 20 18 伊酱 无 无 Akari</div></div>
+                <div class="cmd-card"><div class="cmd-name">/移除排表 月 日 时 [结束时间]</div><div class="cmd-desc">删除指定时间的排表和提醒</div><div class="param">示例：/移除排表 5 20 18</div></div>
+                <div class="cmd-card"><div class="cmd-name">/代添加排表 月 日 时 [结束时间] CN [返场]</div><div class="cmd-desc">管理员手动添加特定人员的排表，返场选填</div><div class="param">示例：/代添加排表 5 20 18 20 伊酱 </br> /代添加排表 5 20 18 伊酱 返场</div></div>
+                <div class="cmd-card"><div class="cmd-name">/添加auto 月 日 时 [结束时间]</div><div class="cmd-desc">添加auto时间段，如果该时间段原本有其他排班则会艾特被替换排班的成员提醒</div><div class="param">示例：/添加auto 5 20 18 20</div></div>
                 <div class="cmd-card"><div class="cmd-name">/取消下一次提醒</div><div class="cmd-desc">删除本群最近一次即将触发的提醒</div></div>
                 <div class="cmd-card"><div class="cmd-name">/cn列表本群</div><div class="cmd-desc">查看本群所有人与CN表的映射关系</div></div>
+                <div class="cmd-card"><div class="cmd-name">/上传cn对应</div><div class="cmd-desc">进入 CN 表上传等待状态（5分钟内有效），随后上传 .xlsx 文件覆盖全局 CN 映射。格式：第一列 QQ 号，第二列 CN 名称（无表头）</div></div>
                 <div class="cmd-card"><div class="cmd-name">/auto</div><div class="cmd-desc">清空当前群的房号并修改群名为AUTO中</br>⚠️ 需要bot为管理员</div></div>
                 <div class="cmd-card"><div class="cmd-name">/停车</div><div class="cmd-desc">清空当前群未来的所有排表，修改群名为辛苦了，并将房号设为停车状态，后续添加任务提示“等待新房号”</br>⚠️ 需要bot为管理员</div></div>
                 <div class="cmd-card"><div class="cmd-name">/silenton</div><div class="cmd-desc">开启本群播报静音模式（不再提示修改群名）</div></div>
@@ -225,7 +229,6 @@
                 <div class="cmd-card"><div class="cmd-name">/deladmin &lt;QQ号/CN&gt;</div><div class="cmd-desc">移除管理员</div></div>
                 <div class="cmd-card"><div class="cmd-name">/listall</div><div class="cmd-desc">查看所有群的任务统计</div></div>
                 <div class="cmd-card"><div class="cmd-name">/listadmin</div><div class="cmd-desc">查看当前的管理员列表</div></div>
-                <div class="cmd-card"><div class="cmd-name">/cn列表</div><div class="cmd-desc">查看当前所有QQ与CN的映射关系，会导出为Excel文件</div></div>
             </div>
         </div>
     </div>
